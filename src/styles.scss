@@ -1,1 +1,553 @@
 /* You can add global styles to this file, and also import other style files */
+
+$color-primary: #0038d1;
+$color-white: #fff;
+$color-secondary: #4B4B4B;
+$color-grey: #a1a1a1;
+$padding: 1.25rem;
+$margin: 1.5rem;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Product Sans', sans-serif !important;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.p-r-1 {
+  padding-right: 1rem;
+}
+
+.p-l-1 {
+  padding-left: 1rem;
+}
+
+.b-l-0 {
+  border-left: 0 !important;
+}
+
+.b-r-0 {
+  border-right: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: $color-primary;
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 $padding;
+  width: 100%;
+
+  .menu-item {
+    cursor: pointer;
+    padding: 0.75rem 0;
+    text-align: center;
+    width: 75px;
+    background: $color-white;
+    margin-right: 1rem;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    color: $color-primary;
+
+    &:hover, &.active {
+      padding: 1rem 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+  }
+
+}
+
+.task-container {
+  height: 100%;
+
+  .task-block {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background: $color-primary;
+  }
+}
+
+.d-fr-jb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-fr-jc-ac {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-card {
+  background: $color-white;
+  padding: 2rem 3rem;
+  border-radius: 5px;
+
+  h1 {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100px;
+      border: 2px solid $color-primary;
+      bottom: -10px;
+    }
+  }
+
+  .role-blocks {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .role-block {
+      border: 1px solid $color-grey;
+      border-radius: 5px;
+      color: $color-grey;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-width: 200px;
+      padding: 2rem 0;
+
+      &:hover {
+        color: $color-primary;
+        cursor: pointer;
+        border-color: transparent;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+
+        h4 {
+          font-weight: bold;
+        }
+
+      }
+
+      .role-icon {
+        font-size: 4rem;
+      }
+
+      h4 {
+        margin-top: 1rem;
+        margin-bottom: 0;
+        font-weight: 200;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  .btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 3rem;
+  }
+
+}
+
+.form-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: $padding 0;
+
+  .right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .form-item {
+    position: relative;
+    margin-bottom: $margin;
+
+    input {
+      border: 1px solid $color-grey;
+      width: 300px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      height: 50px;
+      font-size: 1rem;
+      border-radius: 5px;
+
+      &::placeholder {
+        color: $color-grey;
+        font-family: "Product Sans", sans-serif;
+      }
+
+      &:focus {
+        border-color: $color-primary;
+        outline: none;
+      }
+
+    }
+
+    &.success {
+      input {
+        border-color: #00FF08;
+      }
+
+      .form-item-status {
+        background: #00FF08;
+      }
+    }
+
+    &.error {
+      input {
+        border-color: #FF0000;
+      }
+
+      .form-item-status {
+        background: #FF0000;
+      }
+    }
+
+    .form-item-status {
+      position: absolute;
+      right: 20px;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+}
+
+.task-btn-2 {
+  width: calc(300px + 2rem);
+  height: 50px;
+  background: $color-primary;
+  border: none;
+  color: $color-white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+    background: darken($color-primary, 10%);
+  }
+}
+
+.task-btn-1 {
+  min-width: 200px;
+  padding: $padding;
+  border-radius: 35px;
+  border: 1px solid $color-grey;
+  color: $color-grey;
+  font-size: 1.1rem;
+  margin-bottom: $margin;
+  background: transparent;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    border-color: $color-primary;
+    background: $color-primary;
+    color: $color-white;
+  }
+
+  .flip-180 {
+    display: inline-flex;
+    transform: rotate(180deg);
+  }
+
+}
+
+.nav-bar {
+  box-sizing: border-box;
+  background: $color-primary;
+  min-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 250px;
+  padding-right: 2rem;
+  z-index: 2;
+
+  .search-bar {
+    position: relative;
+
+    input {
+      border: none;
+      border-bottom: 1px solid $color-white;
+      background: transparent;
+      color: $color-white;
+      padding: 0.5rem 2rem;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: $color-white;
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 5px;
+      color: $color-white;
+      font-size: 0.75rem;
+    }
+
+  }
+
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    background-color: $color-secondary;
+    border-radius: 50%;
+    font-size: 0.75rem;
+  }
+
+}
+
+.aside-bar {
+  width: 180px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: $color-secondary;
+  z-index: 1;
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+
+  .aside-item {
+    color: #D4D4D4;
+    padding: 1rem $padding;
+    border-left: 5px solid transparent;
+
+    &:hover,
+    &.active {
+      color: $color-white;
+      border-color: $color-primary;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 1.25rem;
+      padding-right: 1rem;
+    }
+  }
+
+}
+
+.dashboard-body {
+  margin-top: 80px;
+  margin-left: 180px;
+  padding: 5rem;
+
+  .score-board {
+    display: flex;
+    justify-content: space-between;
+
+    .score-card {
+      background-color: $color-white;
+      flex-basis: 350px;
+      border-radius: 5px;
+      box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.1);
+      margin-bottom: $margin;
+
+      &:hover {
+        color: $color-white;
+        background: $color-secondary;
+        box-shadow: none;
+        cursor: pointer;
+
+        h1 {
+          color: $color-white;
+        }
+      }
+
+      h1 {
+        color: $color-primary;
+        font-size: 2rem;
+      }
+
+    }
+
+  }
+
+  .graph-card {
+    background-color: $color-white;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(50, 50, 50, 0.1);
+
+    img {
+      flex: 3;
+    }
+
+    .graph-content {
+      flex: 1;
+      padding: 1rem;
+      text-align: center;
+
+      .login-content {
+        padding: 1rem 2rem;
+        color: $color-secondary;
+        font-weight: 200;
+      }
+
+      .months-content {
+        display: flex;
+        padding: 1rem 2rem;
+
+        .months-item {
+          flex-grow: 1;
+          border: 1px solid $color-secondary;
+          padding-top: $padding;
+          padding-bottom: $padding;
+
+          .score {
+            color: $color-primary;
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.toggler {
+  display: none;
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background: $color-white;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .task-block {
+    align-items: center;
+
+    .role-blocks {
+      padding: 3rem;
+
+      .role-block {
+        &:not(:last-of-type) {
+          margin-right: 3.5rem;
+        }
+      }
+    }
+  }
+
+  .left-block {
+    padding-right: 3.5rem;
+  }
+
+  .graph-card,
+  .score-card {
+    padding: 2rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .role-blocks {
+    padding: 2rem;
+
+    .role-block {
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  .graph-card {
+    img {
+      width: 100%;
+    }
+  }
+
+  .score-board {
+    flex-wrap: wrap;
+
+    .score-card {
+      flex-grow: 1;
+    }
+  }
+
+  .graph-card,
+  .score-card {
+    padding: 1rem;
+  }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .task-card {
+    border-radius: 0;
+  }
+
+  .btns {
+    justify-content: center !important;
+  }
+
+  .portfolio {
+    display: none;
+  }
+
+  .nav-bar {
+    padding-left: 2rem;
+  }
+
+  .toggler {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dashboard-body {
+    margin-left: 0;
+  }
+
+}

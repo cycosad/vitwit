@@ -1,0 +1,72 @@
+<header class="nav-bar">
+  <div class="toggler" (click)="onToggle()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <div class="search-bar">
+    <input type="text" class="form-item-type" placeholder="Search">
+    <span class="flaticon-searching-magnifying-glass"></span>
+  </div>
+  <div class="user-icon">
+    <span class="flaticon-user"></span>
+  </div>
+</header>
+<aside class="aside-bar" *ngIf="showSidebar">
+  <div class="aside-item active">
+    <span class="flaticon-dashboard"></span>
+    Dashboard
+  </div>
+  <div class="aside-item">
+    <span class="flaticon-permission"></span>
+    Permissions
+  </div>
+</aside>
+<section class="dashboard-body">
+  <div class="score-board">
+    <div class="score-card">
+      <p>No of Users</p>
+      <h1>239</h1>
+      <p><strong>14</strong> New Users (last month)</p>
+    </div>
+    <div class="score-card">
+      <p>No of Companies</p>
+      <h1>183</h1>
+      <p><strong>21</strong> New Companies (last month)</p>
+    </div>
+    <div class="score-card">
+      <p>No of Permissions</p>
+      <h1>37</h1>
+      <p><strong>08</strong> New Companies (last month)</p>
+    </div>
+  </div>
+  <div class="graph-card">
+    <img src="../../assets/images/graph.png" alt="graph">
+    <div class="graph-content">
+      <h3>April 2019</h3>
+      <div class="login-content">
+        <div class="d-fr-jb">
+          <p><strong>06</strong> April 2019</p>
+          <p>:</p>
+          <p><strong>3</strong> New Logins</p>
+        </div>
+        <div class="d-fr-jb">
+          <p><strong>08</strong> April 2019</p>
+          <p>:</p>
+          <p><strong>1</strong> New Logins</p>
+        </div>
+      </div>
+      <hr />
+      <div class="months-content">
+        <div class="months-item b-l-0">
+          <div>Last Month</div>
+          <div class="score">35</div>
+        </div>
+        <div class="months-item b-l-0 b-r-0">
+          <div>Last 2 Months</div>
+          <div class="score">19</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
